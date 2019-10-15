@@ -87,8 +87,11 @@ inner_loop_start:
     lw t1, 32(sp)
     lw ra, 36(sp)
     addi sp, sp, 40
-
-    add t3, a6, s0          # increment pointer to d to right place
+    
+    # increment pointer to d to right place
+    slli s4, t0, 2
+    mul s4, s4, a5
+    add t3, a6, s4
     add t3, t3, s1
 
     sw t2, 0(t3)
@@ -102,6 +105,7 @@ inner_loop_end:
     addi t0, t0, 1          # increment outer-loop counter
 
     j outer_loop_start
+    
 outer_loop_end:
 
 

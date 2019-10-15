@@ -4,8 +4,8 @@
 
 # static values for testing
 .data
-m0: .word 1 2 3 4 5 6 7 8 9
-m1: .word 1 2 3 4 5 6 7 8 9
+m0: .word 1 2 3 4 5 6 7 8 
+m1: .word 1 2 3 4 5 6 7 8 9 10 11 12
 d: .word 0 0 0 0 0 0 0 0 0 # allocate static space for output
 
 .text
@@ -13,10 +13,10 @@ main:
     # Load addresses of input matrices (which are in static memory), and set their dimensions
     la s0, m0
     la s1, m1
-    li s2, 1 # rows m0
-    li s3, 9 # cols m0
-    li s4, 9 # rows m1
-    li s5, 1 # cols m1
+    li s2, 4 # rows m0
+    li s3, 2 # cols m0
+    li s4, 2 # rows m1
+    li s5, 6 # cols m1
     la s6, d
 
 
