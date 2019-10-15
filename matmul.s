@@ -22,12 +22,13 @@ matmul:
     bne a2, a4, mismatched_dimensions
 
     # Prologue
-    addi sp, sp, -20
+    addi sp, sp, -24
     sw ra, 0(sp)
     sw s0, 4(sp)
     sw s1, 8(sp)
     sw s2, 12(sp)
     sw s3, 16(sp)
+    sw s4, 20(sp)
 
     add t0, x0, x0          # row counter (outer-loop)
     add t1, x0, x0          # column counter (inner-loop)
@@ -105,7 +106,7 @@ inner_loop_end:
     addi t0, t0, 1          # increment outer-loop counter
 
     j outer_loop_start
-    
+
 outer_loop_end:
 
 
@@ -115,7 +116,8 @@ outer_loop_end:
     lw s1, 8(sp)
     lw s2, 12(sp)
     lw s3, 16(sp)
-    addi sp, sp, 20
+    lw s4, 20(sp)
+    addi sp, sp, 24
 
     ret
 
