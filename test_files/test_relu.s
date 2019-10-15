@@ -3,7 +3,7 @@
 
 # Set vector values for testing
 .data
-m0: .word 1 -2 3 -4 5 -6 7 -8 9 # MAKE CHANGES HERE
+m0: .word 1 -2 32343 -4 -5 -6 -7 -8 -9 # MAKE CHANGES HERE
 
 
 .text
